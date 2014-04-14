@@ -1,0 +1,11 @@
+name: "Paul Statezny"
+description: "Blog of Paul Statezny"
+
+url: "http://paulstat.com"
+
+paginate: 5
+paginate_path: "blog/page:num"
+
+markdown: rdiscount
+permalink: "/blog/:title"
+pygments: true

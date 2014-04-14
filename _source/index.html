@@ -1,0 +1,50 @@
+---
+title: A web development blog | Paul Statezny
+layout: default
+---
+{% for post in paginator.posts %}
+    <h3 class="post-title">
+        <a href="{{ post.url }}">{{ post.title }}</a>
+    </h3>
+
+    <span class="details"><strong>{{ post.date | date: '%B %d, %Y' }}</strong></span>
+
+    {{ post.excerpt }}
+
+    <a href="{{ post.url }}">Read more</a>
+
+    {% if post.previous != nil %}
+        <hr />
+    {% endif %}
+{% endfor %}
+
+<!-- Pagination links -->
+{% if paginator.total_pages > 1 %}
+<div class="pagination">
+  {% if paginator.previous_page %}
+    <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo; Newer posts</a>
+  {% else %}
+    <span>&laquo; Newer posts</span>
+  {% endif %}
+
+  <span class="separator">|</span>
+
+  {% for page in (1..paginator.total_pages) %}
+    {% if page == paginator.page %}
+      <strong>{{ page }}</strong>
+    {% elsif page == 1 %}
+      <a href="{{ '/' | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a>
+    {% else %}
+      <a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a>
+    {% endif %}
+  {% endfor %}
+
+  <span class="separator">|</span>
+
+  {% if paginator.next_page %}
+    <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older posts &raquo;</a>
+  {% else %}
+    <span>Older posts &raquo;</span>
+  {% endif %}
+</div>
+{% endif %}
