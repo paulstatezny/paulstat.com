@@ -8,7 +8,7 @@ body {
 }
 
 p {
-  margin: 0 0 10px;
+  margin: 0 0 1em;
 }
 
 a {
@@ -22,7 +22,7 @@ h3,
 h4,
 h5,
 h6 {
-  margin: 10px 0;
+  margin: 1em 0 0.5em;
   font-weight: bold;
   line-height: 20px;
 }
@@ -62,20 +62,32 @@ h6 {
   font-size: 11.9px;
 }
 
-p + h3, p + h4, p + h5 {
-    margin-top: 30px;
+p + h3, p + h4, p + h5, table + h3, table + h4, table + h5, blockquote + h3, blockquote + h4, blockquote + h5 {
+    margin-top: 2em;
 }
 
 img {
-    display: block;
-    border: 1px solid #999;
+    display   : block;
+    border    : 1px solid #999;
     box-shadow: 2px 2px 3px 1px #ccc;
-    margin: 2em auto;
+    margin    : 2em auto;
+    max-width : 100%;
 }
 
 blockquote {
     border-left: 4px solid #bbb;
     padding-left: 1em;
+}
+
+table {
+    border-spacing: 0;
+    border-collapse: collapse;
+    margin: 1em 0 1em;
+}
+
+td, th {
+    border: 1px solid #bbb;
+    padding: 0.5em;
 }
 
 .container {
