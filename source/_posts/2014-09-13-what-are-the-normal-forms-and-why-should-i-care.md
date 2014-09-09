@@ -1,13 +1,14 @@
 ---
-title: "Database Normalization: What Are the Normal Forms and Why Should I Care?"
-layout: post
+title   : "Database Normalization: What Are the Normal Forms and Why Should I Care?"
+layout  : post
+excerpt : <p>As web developers, we're required to be familiar with technologies across the whole stack. With our hands in so many domains, it can be hard to gain expertise in many of them. This is often the case when it comes to database theory &mdash; a subject which isn't shiny, popular or new. That's where I found myself, so I set out to dig a bit deeper. And here's what I learned.</p>
 ---
 
 As web developers, we're required to be familiar with technologies across the whole stack. Front-end languages, back-end languages, various frameworks and libraries, server administration, and &mdash; of course &mdash; databases. With our hands in so many domains, it can be hard to gain expertise in many of them. Our attention devoted to keeping up with the cutting edge. For the not-so-cutting-edge, we sometimes just learn what we have to.
 
 This is often the case when it comes to database theory &mdash; a subject which isn't shiny, popular or new. Developers without a Computer Science degree simply learn the basics of relational databases and some general rules for indexing...and move on.
 
-This is where I found myself, so I set out to dig a bit deeper. And here's what I learned. Join me on this short blog tour of the basics of *database normalization*. You'll learn some history, some new vocabulary and look at the first three Normal Forms. If you want your database decisions to have foundational substance behind them, read on.
+That's where I found myself, so I set out to dig a bit deeper. And here's what I learned. Join me on this short blog tour of the basics of *database normalization*. You'll learn some history, some new vocabulary and look at the first three Normal Forms. If you want your database decisions to have foundational substance behind them, read on.
 
 ### E.F. Codd and the Relational Database Model
 
