@@ -1,7 +1,7 @@
 ---
-title: "There's a Bug in Sprint's Billing System"
-layout: post
-excerpt: <p>My wife and I recently switched cell phone plans from Verizon to Sprint. We were saving money, and Sprint's service was better than we expected. Then, the bug happened.</p>
+title   : "There's a Bug in Sprint's Billing System"
+layout  : post
+excerpt : <p>My wife and I recently switched cell phone plans from Verizon to Sprint. We were saving money, and Sprint's service was better than we expected. Then, the bug happened.</p>
 ---
 
 > **TL;DR**
