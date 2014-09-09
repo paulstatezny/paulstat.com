@@ -9,5 +9,5 @@ markdown  : rdiscount
 permalink : "/blog/:title"
 pygments  : true
 
-source      : _source
-destination : _site
+source      : source
+destination : deploy
