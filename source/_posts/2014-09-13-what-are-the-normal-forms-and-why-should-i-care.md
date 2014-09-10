@@ -14,11 +14,23 @@ That's where I found myself, so I set out to dig a bit deeper. And here's what I
 
 Edgar Frank Codd was an Englishman born in 1923. He studied mathematics and chemistry at Oxford and served as a pilot in World War II. After the war, he moved to New York to work for IBM as a programmer. In the 60's he earned a doctorate in computer science. It was after earning his PhD that he published theories that would become the foundation of modern relational databases.
 
-Talk about Codd, his discoveries, that people have disagreed.
+Codd published a model for relational databases and a number of requirements for a database to be truly "relational". These are called "normal forms". The term "database normalization" refers to the process of making your database "normal" &mdash; making it fit the requirements to be relational.
 
 ### Why Normalize Your Database?
 
+One of the top goals of database normalization is to eliminate redundant data. When I say redundant data, I mean data that repeats itself. Redundant data is problematic, because when it comes out of sync the database suddenly contains untrue data. (This is called a "modification anomaly".) Who wants a database full of lies?
+
+Various sources cite a number of further benefits:
+
+1. Normalized databases generally require less redesign whenever extending the structure.
+1. Normalized databases are generally more informative to users.
+1. Normalized databases avoid bias toward a particular pattern of querying.
+
 ### Why Not Normalize Your Database?
+
+Like all things in the realm of technology, database normalization is a trade-off. The more you normalize your database, the more complex your queries tend to become. Why? Because there are two goals at odds here: making the relationships "pure", and making it easy to get the data you want in the desired format. The "purer" the relationships, the more resources tend to be necessary to get the data you need.
+
+So I'm just going to come out and say it: You don't always want a completely normalized database. There's a balancing act between your app's performance (queries with less joins, aggregations, etc.) and your database's sanity.
 
 ### First Normal Form (1NF)
 
