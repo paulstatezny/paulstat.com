@@ -178,6 +178,13 @@ hr {
     border-bottom: 2px solid #ffffff;
 }
 
+code {
+    background-color: #e9e9e9;
+    color: #0fb300;
+    padding: 0.15em 0.3em;
+    border-radius: 0.2em;
+}
+
 .post-title {
     border: 0;
 }
