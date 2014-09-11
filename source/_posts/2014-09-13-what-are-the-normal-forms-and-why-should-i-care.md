@@ -69,6 +69,8 @@ You can put the table in 1NF by making the data atomic, like so:
 | 2         | 555-8901     |
 | 3         | 555-4321     |
 
+In real-world situations, 1NF is probably broken mostly by fields with comma-separated values (`555-1234,555-5678`) and data serialized into JSON (`{numbers:["555-1234", "555-5678"]}`). As you can see, the solution is generally to extract that data out into its own table.
+
 #### Second Normal Form (2NF)
 
 #### Third Normal Form (3NF)
