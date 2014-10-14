@@ -4,33 +4,35 @@ layout  : post
 excerpt : <p>As web developers, we're required to be familiar with technologies across the whole stack. With our hands in so many domains, it can be hard to gain expertise in many of them. This is often the case when it comes to database theory &mdash; a subject which isn't shiny, popular or new. That's where I found myself, so I set out to dig a bit deeper. And here's what I learned.</p>
 ---
 
-Web developers are required to know technologies all across the stack. Front-end languages, back-end languages, frameworks, libraries, server administration and &mdash; of course &mdash; databases. With our hands in so many domains, we sometimes just learn what we have to.
+Web developers are required to know technologies all across the stack. With our hands in so many domains, we sometimes only learn what's necessary to get the job done. We know that our product will be better with a more thorough understanding, but it's hard to be an expert in so many areas.
 
-For many devs, this is the case when it comes to database theory. It's a subject that isn't shiny, popular or new. We simply learn the basics of relational databases and some general rules for indexing, and move on.
+When it comes to database theory, the Normal Forms are a great place to start. In this blog we'll cover some vocabulary and look at the first three Normal Forms.
 
-That's where I found myself, so I set out to dig a bit deeper. And here's what I learned. I'll cover some history, some new vocabulary and the first three Normal Forms.
+#### "Normal Forms", eh?
 
-#### E.F. Codd and the Relational Database Model
+Edgar Frank Codd was a pretty awesome dude. He went to college at Oxford, served as a pilot in World War II, and basically invented relational databases. No big deal.
 
-Edgar Frank Codd was an Englishman born in 1923. He studied mathematics and chemistry at Oxford and served as a pilot in World War II. After the war, he moved to New York to work for IBM as a programmer. In the 60's he earned a doctorate in computer science. It was after earning his PhD that he published theories that would become the foundation of modern relational databases.
+In the 70's Codd outlined a number of rules a database must follow in order to be truly "relational". These he called the "normal forms". The term "database normalization" refers to the process of making your database follow these rules.
 
-Codd published a model for relational databases and a number of requirements for a database to be truly "relational". These are called "normal forms". The term "database normalization" refers to the process of making your database "normal" &mdash; making it fit the requirements to be relational.
+#### Why Normalize My Database?
 
-#### Why Normalize Your Database?
+Database normalization is all about structuring your tables the "right way". Keeping related data together, and keeping unrelated data (or not-closely-enough-related data) apart. In short, this is how the "pros" structure their data.
 
-One of the top goals of database normalization is to eliminate redundant data. When I say redundant data, I mean data that repeats itself. Redundant data is problematic, because when it comes out of sync the database suddenly contains untrue data. (This is called a "modification anomaly".) Who wants a database full of lies?
+One of the primary goals of the Normal Forms is to eliminate redundant data. (Data that is repeated in multiple places.) When redundant data is updated in one place but not another, the database is suddenly "out of sync". It contains lies! Database theorists call this a "modification anomaly".
 
-Various sources cite a number of further benefits:
+But also:
 
-1. Normalized databases generally require less redesign whenever extending the structure.
 1. Normalized databases are generally more informative to users.
 1. Normalized databases avoid bias toward a particular pattern of querying.
+1. Normalized databases generally require less redesign whenever extending the structure.
 
-#### Why Not Normalize Your Database?
+#### Why Should I *Not* Normalize My Database?
 
-Like all things in the realm of technology, database normalization is a trade-off. The more you normalize your database, the more complex your queries tend to become. Why? Because there are two goals at odds here: making the relationships "pure", and making it easy to get the data you want in the desired format. The "purer" the relationships, the more resources tend to be necessary to get the data you need.
+Like many other areas of technology, database normalization involves a trade-off. When you normalize your database, you're often forcing yourself to write slightly more complex queries in order to get the data you want. But at the same time you gain all the benefits described above.
 
-So I'm just going to come out and say it: You don't always want a completely normalized database. There's a balancing act between your app's performance and your database's sanity.
+Why does normalization bring more complex queries with it? Because there are two goals that are at odds: the goal of making the relationships in the database "pure", and the goal of making it easy to retrieve the data you want in the format you want. The "purer" the relationships in your database, the more joins and aggregate functions are needed to get the data you want. (Examples to come; keep reading!)
+
+So I'm just going to come out and say it: You don't always want a completely normalized database. You want to balance your app's performance with your database's sanity.
 
 #### First Normal Form (1NF)
 
@@ -69,7 +71,7 @@ You can put the table in 1NF by making the data atomic, like so:
 | 2         | 555-8901     |
 | 3         | 555-4321     |
 
-In real-world situations, 1NF is probably broken mostly by fields with comma-separated values (`555-1234,555-5678`) and data serialized into JSON (`{numbers:["555-1234", "555-5678"]}`). As you can see, the solution is generally to extract that data out into its own table.
+In real-world situations, 1NF is broken by fields with comma-separated values (`555-1234,555-5678`) and data serialized into JSON (`{numbers:["555-1234", "555-5678"]}`). As you can see, the solution is to extract that data out into its own table.
 
 #### Second Normal Form (2NF)
 
